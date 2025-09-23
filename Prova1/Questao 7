@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: #f5f5f5;
+    }
+
+    .bola {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      transition: transform 1s;
+    }
+
+  
+    .red { background: red; top: 20%; left: 50%; }
+    .blue { background: blue; top: 40%; left: 70%; }
+    .green { background: green; top: 70%; left: 30%; }
+    .purple { background: purple; top: 60%; left: 60%; }
+    .yellow { background: yellow; top: 80%; left: 50%; }
+
+  
+    body:hover .red   { transform: translate(-50px, -50px) rotate(360deg); }
+    body:hover .blue  { transform: translate(80px, -40px) rotate(360deg); }
+    body:hover .green { transform: translate(-60px, 60px) rotate(360deg); }
+    body:hover .purple{ transform: translate(40px, 70px) rotate(360deg); }
+    body:hover .yellow{ transform: translate(0, -80px) rotate(360deg); }
+  </style>
+</head>
+<body>
+  <div class="bola red"></div>
+  <div class="bola blue"></div>
+  <div class="bola green"></div>
+  <div class="bola purple"></div>
+  <div class="bola yellow"></div>
+</body>
+</html>
