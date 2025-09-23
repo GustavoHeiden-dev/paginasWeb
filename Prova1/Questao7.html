@@ -22,25 +22,35 @@
     }
 
   
-    .red { background: red; top: 20%; left: 50%; }
-    .blue { background: blue; top: 40%; left: 70%; }
-    .green { background: green; top: 70%; left: 30%; }
-    .purple { background: purple; top: 60%; left: 60%; }
-    .yellow { background: yellow; top: 80%; left: 50%; }
+    .vermelha { background: red; top: 20%; left: 50%; }
+    .azul { background: blue; top: 40%; left: 70%; }
+    .verde { background: green; top: 70%; left: 30%; }
+    .roxo { background: purple; top: 60%; left: 60%; }
+    .amarelo { background: yellow; top: 80%; left: 50%; }
 
   
-    body:hover .red   { transform: translate(-50px, -50px) rotate(100deg); }
-    body:hover .blue  { transform: translate(80px, -40px) rotate(360deg); }
-    body:hover .green { transform: translate(-60px, 60px) rotate(360deg); }
-    body:hover .purple{ transform: translate(40px, 70px) rotate(360deg); }
-    body:hover .yellow{ transform: translate(0, -80px) rotate(360deg); }
+    body:hover .vermelha   {
+         transform: translate(50px, 50px) rotate(100deg); 
+        }
+    body:hover .azul  { 
+        transform: translate(80px, 40px) rotate(360deg); 
+    }
+    body:hover .verde { 
+        transform: translate(60px, 60px) rotate(360deg); 
+    }
+    body:hover .roxo{ 
+        transform: translate(40px, 70px) rotate(360deg);
+     }
+    body:hover .amarelo{ 
+        transform: translate(0, 80px) rotate(360deg); 
+    }
   </style>
 </head>
 <body>
-  <div class="bola red"></div>
-  <div class="bola blue"></div>
-  <div class="bola green"></div>
-  <div class="bola purple"></div>
-  <div class="bola yellow"></div>
+  <div class="bola vermelha"></div>
+  <div class="bola azul"></div>
+  <div class="bola verde"></div>
+  <div class="bola roxo"></div>
+  <div class="bola amarelo"></div>
 </body>
 </html>
