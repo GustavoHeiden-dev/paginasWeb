@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            
+            height: 100vh;
+            width: 200vh;
+            gap: 20px;
+            margin: 0;
+            
+        }
+        
+        .bola:hover{
+            animation: girar 3s linear infinite;
+        }
+        @keyframes girar{
+            100%{
+                transform: rotate(300px);
+            }
+        }
+        .bola{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            display: inline-block;
+            transition: transform 2s linear;
+        }
+        .vermelha{
+            background-color: red;
+        }
+        .verde{
+            background-color: green;
+        }
+        .roxo{
+            background-color: purple;
+        }
+        .azul{
+            background-color: rgb(0, 153, 255);
+        }
+        .amarela{
+            background-color: yellow;
+        }
+        .espaco1{
+            display: flex;
+            justify-content: space-between;
+        }
+         .espaco2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .espaco3{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body >
+    <div class="container">
+    <div class="espaco1">
+    <div class="bola vermelha"></div>
+     <div class="bola azul"></div>
+    </div>
+    <div class="espaco2">
+        <div class="bola roxo"></div>
+    </div>
+     <div class="espaco3">
+         <div class="bola verde"></div>
+        <div class="bola amarela"></div>
+     </div>
+     </div>
+   
+
+</body>
+</html>
