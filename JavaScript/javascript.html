@@ -24,10 +24,13 @@
         document.body.style.display="flex"
         document.body.style.justifyContent="center"
         document.body.style.alignItems="center"
-        
-        botao.addEventListener(()=>{
-            paragrafo.innerText="oi"
-        })
+         var contador = 0
+         botao.addEventListener("click", function() {
+          
+            contador++
+            paragrafo.innerText = contador;
+
+        });
     
         
     </script>

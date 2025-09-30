@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="titulo">Texto</h1>
+    <h1 id="titulo1">Texto</h1>
+    <h1 id="titulo2">Texto</h1>
+    <script>
+        let titulo=document.querySelector("#titulo");
+         let titulo1=document.querySelector("#titulo1");
+          let titulos=document.querySelectorAll("h1");
+  
+
+        for (let i = 0; i < titulos.lenght ; i++) {
+            titulos[i]=innerText=i;
+            
+        }
+        
+        titulos.forEach((e,i) => {
+            e.innerHTML+= "-"+i;
+        });
+    </script>
+    
+</body>
+</html>

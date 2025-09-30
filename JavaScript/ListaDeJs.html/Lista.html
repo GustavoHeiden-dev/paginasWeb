@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .container div {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Nome:</p><input type="text" id="nome" placeholder="Nome:">
+        </div>
+        <div>
+            <p>Peso :</p><input type="number" id="peso" placeholder="Peso:">
+        </div>
+        <div>
+            <p>Altura :</p><input type="number" id="altura"  placeholder="Altura:">
+        </div>
+    </div>
+    <button id="botao" onclick="calcular()">Calcular IMC</button>
+    <div id="resultado"><p id="result"></p></div> 
+
+    <script>
+        function calcular(){
+  
+            var nome = document.getElementById("nome").value;
+            var peso = document.getElementById("peso").value;
+            var altura = document.getElementById("altura").value;
+
+    
+            if (!nome || !peso || !altura) {
+                alert(" preencha todos os campos.");
+                return;
+            }
+             var resultado = document.getElementById("result");
+            peso = parseFloat(peso);
+            altura = parseFloat(altura);
+            var imc = peso / (altura * altura);
+          
+            if(imc,18.5){
+                 resultado.innerText = "abaixo do peso seu IMC é:"+imc.toFixed(2);
+            }
+            
+           
+
+           
+        }
+    </script>
+</body>
+</html>
