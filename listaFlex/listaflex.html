@@ -1,0 +1,271 @@
+
+<!--Questao1:--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapos e Lírios</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightgreen;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            height: 50px;
+            background-color: lightyellow;
+            border: 2px solid darkgreen;
+        }
+        .sapinho {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sapinho"></div>
+        <div class="sapinho"></div>
+        <div class="sapinho"></div>
+    </div>
+</body>
+</html>
+
+<!--Questao2:--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Centralizada</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: aliceblue;
+            margin: 0;
+        }
+        .container {
+            border: 2px solid purple;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Logo</div>
+        <div class="content">Conteúdo</div>
+    </div>
+</body>
+</html>
+
+<!--Questao3:--->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfis de Usuários</title>
+    <style>
+        body {
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            width: 320px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .usuario {
+            display: flex;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .perfilUsuario {
+            display: flex;
+            flex-direction: column;
+        }
+        .nome {
+            font-weight: bold;
+        }
+        .endereco {
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="usuario">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar">
+            <div class="perfilUsuario">
+                <div class="nome">Linda Hart</div>
+                <div class="endereco">Rua 2420</div>
+            </div>
+        </div>
+        <div class="usuario">
+            <img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar">
+            <div class="perfilUsuario">
+                <div class="nome">Roger Medina</div>
+                <div class="endereco">Rua 2420</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--Questao4:--->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards de Imagens</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: beige;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 10px;
+            width: 80%;
+        }
+        .card {
+            position: relative;
+            flex: 1;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .card.principal {
+            flex: 3;
+            padding: 20px;
+        }
+        .info {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');"></div>
+        <div class="card principal" style="background-image: url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66');">
+            <div class="info">
+                <h1>Título do Card</h1>
+                <p>Descrição do Card</p>
+            </div>
+        </div>
+        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');"></div>
+    </div>
+</body>
+</html>
+<!---questao5:-->>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout de Página</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 80vh;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .cabecalho {
+      background-color: #a6ce39;
+      padding: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .principal {
+      display: flex;
+      flex: 1;
+    }
+    .artigo {
+      flex: 3;
+      background-color: #f9f9f9;
+      padding: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .lateral {
+      flex: 1;
+      background-color: #fff9e5;
+      padding: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .navegacao {
+      flex: 1;
+      background-color: #e4f0e4;
+      padding: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .rodape {
+      background-color: #a6ce39;
+      padding: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+   <div class="container">
+    <div class="cabecalho">Cabeçalho</div>
+
+    <div class="principal">
+      <div class="artigo">Artigo</div>
+      <div class="lateral">Lateral</div>
+      <div class="navegacao">Navegação</div>
+    </div>
+
+    <div class="rodape">Rodapé</div>
+  </div>
+</body>
+</html>
