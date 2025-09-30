@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /*  alert("ola mundo")*/
+        var i=0
+        let nome="romulo"
+        console.log(i)
+        console.log(nome)
+        document.body.style.backgroundColor="lightblue"
+        var botao = document.createElement("button");
+        botao.id="btn"
+        botao.innerText = "clique aq";
+        document.body.appendChild(botao)
+        paragrafo = document.createElement("p")
+        document.body.appendChild(paragrafo)
+
+        document.body.style.height="100vh"
+        document.body.style.display="flex"
+        document.body.style.justifyContent="center"
+        document.body.style.alignItems="center"
+        
+        botao.addEventListener(()=>{
+            paragrafo.innerText="oi"
+        })
+    
+        
+    </script>
+</body>
+</html>
