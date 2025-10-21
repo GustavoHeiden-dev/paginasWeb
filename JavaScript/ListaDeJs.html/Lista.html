@@ -1,68 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora de IMC</title>
     <style>
-        body{
+        body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
         }
-        .container{
+
+        .container {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-bottom: 20px;
+            height: 250px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px rgb(59, 59, 59);
         }
+
         .container div {
             display: flex;
             gap: 10px;
             align-items: center;
         }
+
+        button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(46, 185, 46);
+            border-radius: 10px;
+
+        }
+        button:hover{
+            background-color: green;
+        }
+
+        #resultado {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #imagem {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
         <div>
             <p>Nome:</p><input type="text" id="nome" placeholder="Nome:">
         </div>
         <div>
-            <p>Peso :</p><input type="number" id="peso" placeholder="Peso:">
+            <p>Peso:</p><input type="number" id="peso" placeholder="Peso (kg):">
         </div>
         <div>
-            <p>Altura :</p><input type="number" id="altura"  placeholder="Altura:">
+            <p>Altura:</p><input type="number" id="altura" placeholder="Altura (m):">
         </div>
+        <div style="align-items: center; display: flex; justify-content: center;">
+          <button id="botao" onclick="calcular()">Calcular IMC</button>
+          </div>
     </div>
-    <button id="botao" onclick="calcular()">Calcular IMC</button>
-    <div id="resultado"><p id="result"></p></div> 
+
+  
+
+    <div id="resultado">
+        <p id="result"></p>
+    </div>
+
+    <div>
+        <img src="" alt="" id="imagem">
+    </div>
 
     <script>
-        function calcular(){
-  
-            var nome = document.getElementById("nome").value;
-            var peso = document.getElementById("peso").value;
-            var altura = document.getElementById("altura").value;
+        function calcular() {
+            var nome = document.getElementById("nome").value.trim();
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+            var resultado = document.getElementById("result");
+            var imagem = document.getElementById("imagem");
 
-    
-            if (!nome || !peso || !altura) {
-                alert(" preencha todos os campos.");
+            if (!nome || isNaN(peso) || isNaN(altura)) {
+                alert("Preencha todos os campos.");
                 return;
             }
-             var resultado = document.getElementById("result");
-            peso = parseFloat(peso);
-            altura = parseFloat(altura);
-            var imc = peso / (altura * altura);
-          
-            if(imc,18.5){
-                 resultado.innerText = "abaixo do peso seu IMC é:"+imc.toFixed(2);
-            }
-            
-           
 
-           
+            var imc = peso / (altura * altura);
+            var imcTexto = imc.toFixed(2);
+
+            if (imc <= 18.5) {
+                resultado.innerText = nome + ", você está abaixo do peso. IMC: " + imcTexto;
+                imagem.src = "imagensImc/abaixopeso.png";
+          
+            } else if (imc <= 24.9) {
+                resultado.innerText = nome + ", você está com peso normal. IMC: " + imcTexto;
+                imagem.src = "imagensImc/normal.png";
+              
+            } else if (imc <= 29.9) {
+                resultado.innerText = nome + ", você está com sobrepeso. IMC: " + imcTexto;
+                imagem.src = "imagensImc/sobrepeso.png";
+             
+            } else {
+                resultado.innerText = nome + ", você está com obesidade. IMC: " + imcTexto;
+                imagem.src = "imagensImc/obesidade3.png";
+             
+            }
         }
     </script>
+
 </body>
 </html>
