@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Verifica se a palavra é palíndromo</h2>
+
+    <label for="">palavra:</label>
+    <input type="text" id="palavra">
+
+    <p for="" id="resultado"></p>
+
+    <button  onclick="iverteP()">enviar</button>
+
+    <script>
+        function iverteP(){
+        let palavra = document.getElementById("palavra").value
+        let resultado = document.getElementById("resultado");
+
+        let normal = palavra.toLowerCase();
+        let invertida = normal.split("").reverse().join("");
+
+        if(invertida === normal){
+            resultado.textContent= "A palavra: "+palavra+" é palíndromo "
+        }
+        else{
+            resultado.textContent= "palavra nao é palíndromo"
+        }
+        }
+      
+    </script>
+</body>
+</html>

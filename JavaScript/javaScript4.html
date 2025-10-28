@@ -1,106 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sorteio de Números</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container {
+          text-align: center;
+        }
+        input, button {
+          margin: 5px;
+        }
+        img {
+      margin-top: 10px;
+      max-width: 200px;
+      display: none; 
     }
-
-    input {
-      margin: 5px;
-      width: 80px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 4px 0;
-    }
-
-    .contador {
-      color: gray;
-      font-size: 0.9em;
-      margin-left: 8px;
-    }
-  </style>
+    </style>
 </head>
 <body>
-
-  <h1>Sorteio de Números</h1>
-
-  <label for="min">Mínimo:</label>
-  <input type="number" id="min" value="1">
-
-  <label for="max">Máximo:</label>
-  <input type="number" id="max" value="100">
-
-  <button onclick="sortear()">Sortear</button>
-
-  <p id="resultado"></p>
-
-  <h3>Números Sorteados:</h3>
-  <ul id="lista"></ul>
+  <div class="container">
+    <input type="text" id="nome" placeholder="Digite seu nome: "> 
+    <input type="number" id="peso" placeholder="Digite seu peso (kg): ">
+    <input type="number" id="altura" placeholder="Digite sua altura (m): ">
+    <button onclick="CalcularIMC()">Calcular</button>
+    <p id="resultadoIMC"></p>
+    <p id="classificacao"></p>
+    <img id="imagemIMC" alt="">
+  </div>
 
   <script>
-    const sorteios = [];
+    function CalcularIMC() {
+      let nome = document.getElementById("nome").value  
+      let peso = parseFloat(document.getElementById("peso").value)
+      let altura = parseFloat(document.getElementById("altura").value)
+      let resultadoIMC = document.getElementById("resultadoIMC")
+      let classificacao = document.getElementById("classificacao")
+      let imagem = document.getElementById("imagemIMC"
+        
+      )
 
-    function sortear() {
-      const min = parseInt(document.getElementById('min').value);
-      const max = parseInt(document.getElementById('max').value);
-      const resultado = document.getElementById('resultado');
+      let imc = (peso / (altura * altura)).toFixed(2)
+      resultadoIMC.innerText = " "+nome + ", seu IMC é: "+ imc
+       imagem.style.display = "block"
 
-      if (isNaN(min) || isNaN(max) || min >= max) {
-        resultado.textContent = 'Por favor, insira um intervalo válido.';
-        return;
+       if (!nome || isNaN(peso) || isNaN(altura)) {
+        alert("Preencha os campos")
+        return
+       }
+
+      if (imc < 18.5) {
+        classificacao.innerText = "Classificação: Abaixo do peso"
+        classificacao.style.color="red"
+        imagem.src = "imagens/abaixopeso.png"
       }
-
-      const numero = Math.floor(Math.random() * (max - min + 1)) + min;
-      resultado.textContent = "Número sorteado: " + numero;
-
-     let encontrado = null;
-    for (let i = 0; i < sorteios.length; i++) {
-        if (sorteios[i].numero === numero) {
-        encontrado = sorteios[i];
-        break;
-        }
-    }
-
-      if (encontrado) {
-        encontrado.vezes++;
-      } else {
-        sorteios.push({ numero: numero, vezes: 1 });
+       else if (imc < 24.9) {
+        classificacao.innerText = "Classificação: Peso normal"
+        classificacao.style.color="blue"
+        imagem.src = "imagens/normal.png"
       }
-
-      atualizarLista();
-    }
-
-    function atualizarLista() {
-      const ul = document.getElementById('lista');
-      ul.innerHTML = '';
-
-      sorteios
-        .sort((a, b) => a.numero - b.numero)
-        .forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item.numero;
-
-          if (item.vezes > 1) {
-            const span = document.createElement('span');
-            span.className = 'contador';
-            span.textContent = " (sorteado " + item.vezes + " vezes)";
-            li.appendChild(span);
-          }
-
-          ul.appendChild(li);
-        });
+       else if (imc < 29.9) {
+        classificacao.innerText = "Classificação: Sobrepeso"
+        classificacao.style.color="´purple" 
+        imagem.src = "imagens/sobrepeso.png"
+      }
+       else {
+        classificacao.innerText = "Classificação: Obesidade"
+        classificacao.style.color="green"
+        imagem.src = "imagens/obesidade1.png"
+      }
     }
   </script>
-
 </body>
 </html>

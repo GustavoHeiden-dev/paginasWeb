@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Primos no Intervalo</title>
+</head>
+<body>
+
+    <h2>Descobrir números primos no intervalo</h2>
+
+    <label for="inicio">Número inicial:</label>
+    <input type="number" id="inicio"><br><br>
+
+    <label for="fim">Número final:</label>
+    <input type="number" id="fim"><br><br>
+
+    <button onclick="verificarPrimos()">Verificar</button>
+
+    <div id="resultadoPrimos" style="margin-top: 15px;"></div>
+
+    <script>
+        // Função para verificar se um número é primo
+        function ehPrimo(n) {
+            if (n < 2) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Função principal
+        function verificarPrimos() {
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fim = parseInt(document.getElementById("fim").value);
+            let resultado = document.getElementById("resultadoPrimos");
+            resultado.innerHTML = "";
+
+            if (isNaN(inicio) || isNaN(fim)) {
+                resultado.innerHTML = "Por favor, preencha os dois números!";
+                return;
+            }
+
+            // Normalizar intervalo (garantir início <= fim)
+            if (inicio > fim) {
+                let temp = inicio;
+                inicio = fim;
+                fim = temp;
+            }
+
+            let primos = [];
+            for (let i = inicio; i <= fim; i++) {
+                if (ehPrimo(i)) {
+                    primos.push(i);
+                }
+            }
+
+            if (primos.length === 0) {
+                resultado.innerHTML = "Nenhum número primo encontrado.";
+            } else {
+                resultado.innerHTML = "Primos encontrados: " + primos.join(", ");
+            }
+        }
+    </script>
+
+</body>
+</html>

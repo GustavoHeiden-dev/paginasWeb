@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cor de Fundo Aleatória</title>
+</head>
+<body style="text-align: center; padding-top: 50px;">
+
+    <h2>Mudar cor de fundo</h2>
+
+    <button onclick="mudarCor()" style="padding: 10px 20px; font-size: 16px;">
+        Mudar cor
+    </button>
+
+    <p id="corAtual" style="font-size: 18px; margin-top: 20px;"></p>
+
+    <script>
+        function gerarCorAleatoria() {
+            let letras = "0123456789ABCDEF";
+            let cor = "#";
+            for (let i = 0; i < 6; i++) {
+                cor += letras[Math.floor(Math.random() * 16)];
+            }
+            return cor;
+        }
+
+        function mudarCor() {
+            let cor = gerarCorAleatoria();
+            document.body.style.backgroundColor = cor;
+            document.getElementById("corAtual").textContent = "Cor atual: " + cor;
+        }
+    </script>
+
+</body>
+</html>

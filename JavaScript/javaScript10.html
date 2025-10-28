@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #c6dfea;
+            font-family: Arial, sans-serif;
+            box-shadow: 10px 5px black;
+        }
+
+        .calculadora {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        #display {
+           
+            height: 50px;
+            font-size: 28px;
+            text-align: right;
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        button {
+            width: 55px;
+            height: 50px;
+            margin: 3px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #a6c4cf;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .igual {
+            background: #ff7f50;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculadora">
+        <input type="text" id="display" disabled>
+
+        <br>
+
+        <button onclick="add('7')">7</button>
+        <button onclick="add('8')">8</button>
+        <button onclick="add('9')">9</button>
+        <button onclick="add('/')">/</button>
+
+        <br>
+
+        <button onclick="add('4')">4</button>
+        <button onclick="add('5')">5</button>
+        <button onclick="add('6')">6</button>
+        <button onclick="add('*')">*</button>
+
+        <br>
+
+        <button onclick="add('1')">1</button>
+        <button onclick="add('2')">2</button>
+        <button onclick="add('3')">3</button>
+        <button onclick="add('-')">-</button>
+
+        <br>
+
+        <button onclick="add('0')">0</button>
+        <button onclick="add('.')">.</button>
+        <button onclick="limpar()">AC</button>
+        <button onclick="add('+')">+</button>
+
+        <br>
+
+        <button class="igual" style="width: 230px;" onclick="calcular()">=</button>
+    </div>
+
+    <script>
+        function add(valor) {
+            document.getElementById('display').value += valor;
+        }
+
+        function limpar() {
+            document.getElementById('display').value = '';
+        }
+
+        function calcular() {
+            let expressao = document.getElementById('display').value;
+            if (expressao) {
+                document.getElementById('display').value = eval(expressao);
+            }
+        }
+    </script>
+
+</body>
+</html>
