@@ -1,0 +1,7 @@
+CREATE DATABASE db_alunos;
+Use db_alunos;
+CREATE TABLE  alunos (
+    id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    Curso VARCHAR(255) NOT NULL
+);
