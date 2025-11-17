@@ -6,8 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Alunos</title>
+    <style>
+        .container{
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+             padding: 10px 15px;
+        }
+        button{
+          background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+    </style>
 </head>
 <body>
+    <div class="container">
     <h1>Cadastro de Alunos</h1>
 
     <form action="" method="POST">
@@ -33,10 +58,11 @@
     while($t = $resultado->fetch_assoc()){
         echo "<li>{$t['Nome']} - {$t['Curso']} 
                 <a href='editar.php?id={$t['id']}'>Editar</a> | 
-                <a href='delete.php?id={$t['id']}'>Excluir</a>
+                <a href='excluir.php?id={$t['id']}'>Excluir</a>
               </li>";
     }
     echo "</ul>";
     ?>
+    </div>
 </body>
 </html>

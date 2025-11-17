@@ -41,8 +41,33 @@ if(isset($_POST['editar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Aluno</title>
+
+    <style>
+              .container{
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+             padding: 10px 15px;
+        }
+        button{
+          background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
     <h1>Editar Aluno</h1>
     <form action="" method="POST">
         <input type="text" name="nome" value="<?= htmlspecialchars($aluno['Nome']); ?>" required>
@@ -51,5 +76,7 @@ if(isset($_POST['editar'])){
     </form>
     <br>
     <a href="index.php">Voltar</a>
+
+    </div>
 </body>
 </html>
